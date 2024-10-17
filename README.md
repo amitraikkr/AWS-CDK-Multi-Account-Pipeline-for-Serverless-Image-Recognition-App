@@ -1,58 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS CDK Multi-Account Pipeline for Serverless Image Recognition</title>
+</head>
+<body>
 
-# Welcome to your CDK Python project!
+<h1>AWS CDK Multi-Account Pipeline for Serverless Image Recognition with Lambda, S3, and Rekognition</h1>
 
-This is a blank project for CDK development with Python.
+<p>
+This repository provides a comprehensive guide to setting up a multi-account CI/CD pipeline using 
+<a href="https://aws.amazon.com/cdk/" target="_blank">AWS CDK</a> for deploying a serverless image recognition 
+application. The project automates infrastructure deployments across <strong>development</strong> and 
+<strong>production</strong> environments, ensuring consistency and scalability using AWS services such as Lambda, S3, Rekognition, 
+DynamoDB, and CodePipeline.
+</p>
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+<h2>Project Overview</h2>
+<p>
+The goal of this project is to showcase how to build a <strong>multi-account CI/CD pipeline</strong> using 
+AWS CDK to manage and deploy resources for an <strong>image recognition</strong> application. 
+The pipeline integrates with GitHub for source control and deploys Lambda functions, S3 buckets, 
+and DynamoDB tables for processing images using AWS Rekognition.
+</p>
 
-This project is set up like a standard Python project.  The initialization
-process also creates a virtualenv within this project, stored under the `.venv`
-directory.  To create the virtualenv it assumes that there is a `python3`
-(or `python` for Windows) executable in your path with access to the `venv`
-package. If for any reason the automatic creation of the virtualenv fails,
-you can create the virtualenv manually.
+<h2>Key Features</h2>
+<ul>
+  <li>Fully automated CI/CD pipeline using AWS CodePipeline and CodeBuild.</li>
+  <li>Serverless image recognition leveraging AWS Rekognition for detecting objects and labels in images.</li>
+  <li>Multi-account setup with deployments to both development and production environments.</li>
+  <li>Cross-account role management for secure deployments between accounts.</li>
+  <li>GitHub integration for source control and continuous deployment.</li>
+</ul>
 
-To manually create a virtualenv on MacOS and Linux:
+<h2>Architecture Overview</h2>
+<p>The following AWS services are used in this project:</p>
+<ul>
+  <li><strong>AWS Lambda:</strong> Processes images by calling AWS Rekognition for label detection.</li>
+  <li><strong>Amazon S3:</strong> Stores the uploaded images and triggers Lambda functions on object creation.</li>
+  <li><strong>Amazon Rekognition:</strong> Performs image analysis and detects objects or labels in images.</li>
+  <li><strong>Amazon DynamoDB:</strong> Stores the results of the image analysis, such as detected labels.</li>
+  <li><strong>AWS CodePipeline:</strong> Manages the CI/CD pipeline for deploying infrastructure and Lambda code.</li>
+  <li><strong>AWS CodeBuild:</strong> Builds the application and synthesizes the CDK app for deployment.</li>
+</ul>
 
-```
-$ python3 -m venv .venv
-```
+<h2>Pre-requisites</h2>
+<ul>
+  <li>AWS account with sufficient privileges to create and manage resources.</li>
+  <li>CDK toolkit installed (<code>npm install -g aws-cdk</code>).</li>
+  <li>AWS CLI configured on your machine.</li>
+  <li>GitHub account for repository integration.</li>
+</ul>
 
-After the init process completes and the virtualenv is created, you can use the following
-step to activate your virtualenv.
+<h2>Installation Instructions</h2>
+<ol>
+  <li>Clone the repository to your local machine:</li>
+  <pre><code>git clone https://github.com/YourGitHubUsername/YourRepositoryName.git</code></pre>
+  
+  <li>Install dependencies for Lambda function (if needed):</li>
+  <pre><code>cd lambda && npm install</code></pre>
+  
+  <li>Install project dependencies:</li>
+  <pre><code>npm install</code></pre>
 
-```
-$ source .venv/bin/activate
-```
+  <li>Configure AWS credentials:</li>
+  <pre><code>aws configure</code></pre>
 
-If you are a Windows platform, you would activate the virtualenv like this:
+  <li>Deploy the resources in your development account:</li>
+  <pre><code>cdk deploy</code></pre>
+</ol>
 
-```
-% .venv\Scripts\activate.bat
-```
+<h2>Usage</h2>
+<ol>
+  <li>Upload an image to the S3 bucket created by the stack.</li>
+  <li>Lambda function is triggered to process the image using Rekognition.</li>
+  <li>Results are stored in DynamoDB, and you can query the detected labels and objects.</li>
+</ol>
 
-Once the virtualenv is activated, you can install the required dependencies.
+<h2>Contributing</h2>
+<p>Contributions are welcome! Please fork this repository and submit a pull request with your improvements.</p>
 
-```
-$ pip install -r requirements.txt
-```
+<h2>Follow Me</h2>
+<p>
+For more content like this, follow me on:
+<ul>
+  <li><a href="https://medium.com/@amitraikkr" target="_blank">Medium</a></li>
+  <li><a href="www.linkedin.com/in/amitraikkr" target="_blank">LinkedIn</a></li>
+</ul>
+</p>
 
-At this point you can now synthesize the CloudFormation template for this code.
-
-```
-$ cdk synth
-```
-
-To add additional dependencies, for example other CDK libraries, just add
-them to your `setup.py` file and rerun the `pip install -r requirements.txt`
-command.
-
-## Useful commands
-
- * `cdk ls`          list all stacks in the app
- * `cdk synth`       emits the synthesized CloudFormation template
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk docs`        open CDK documentation
-
-Enjoy!
+</body>
+</html>

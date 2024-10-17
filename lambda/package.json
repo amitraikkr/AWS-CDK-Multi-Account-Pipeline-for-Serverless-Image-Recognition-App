@@ -1,0 +1,11 @@
+{
+  "name": "rekognition-lambda",
+  "version": "1.0.0",
+  "description": "AWS Lambda function for image recognition using Rekognition",
+  "main": "rekognition.js",
+  "dependencies": {
+    "@aws-sdk/client-rekognition": "^3.0.0",
+    "@aws-sdk/client-s3": "^3.0.0",
+    "@aws-sdk/client-dynamodb": "^3.0.0"
+  }
+}
