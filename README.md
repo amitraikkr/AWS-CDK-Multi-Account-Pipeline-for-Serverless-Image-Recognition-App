@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AWS CDK Multi-Account Pipeline for Serverless Image Recognition</title>
-</head>
-<body>
 
 <h1>AWS CDK Multi-Account Pipeline for Serverless Image Recognition with Lambda, S3, and Rekognition</h1>
 
@@ -56,7 +48,7 @@ and DynamoDB tables for processing images using AWS Rekognition.
 <h2>Installation Instructions</h2>
 <ol>
   <li>Clone the repository to your local machine:</li>
-  <pre><code>git clone https://github.com/YourGitHubUsername/YourRepositoryName.git</code></pre>
+  <pre><code>git clone https://github.com/amitraikkr/AWS-CDK-Multi-Account-Pipeline-for-Serverless-Image-Recognition-App.git</code></pre>
   
   <li>Install dependencies for Lambda function (if needed):</li>
   <pre><code>cd lambda && npm install</code></pre>
@@ -89,6 +81,3 @@ For more content like this, follow me on:
   <li><a href="www.linkedin.com/in/amitraikkr" target="_blank">LinkedIn</a></li>
 </ul>
 </p>
-
-</body>
-</html>
