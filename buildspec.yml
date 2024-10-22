@@ -3,11 +3,10 @@ phases:
   install:
     commands:
       - npm install -g aws-cdk
-      - npm install  # Install dependencies (if Node.js project)
+      - npm -r requirements.txt  # Install dependencies 
   build:
     commands:
       - cdk synth  # Run CDK synth to generate CloudFormation templates
 artifacts:
   files:
     - '**/*'  # Package everything in the project
-    - '!node_modules/**/*'  # Exclude node_modules
